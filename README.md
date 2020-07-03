@@ -27,7 +27,7 @@ print('La potencio pormedio es:', P,'W' )
 ```
 Al momento de evaluarlo dando como resultado lo siguiente.
 
-```python
+```
 La potencio promedio es: 0.4900009800019598 W
 ```
 
