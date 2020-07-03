@@ -24,7 +24,7 @@ data = pd.read_csv('bits10k.csv', header=None, prefix="data")
 
 f=5000 #frecuencia
 
-T= 1/f #periodo
+T= 1/f #periodo 0.0002
 
 #numero de puntos de muestreo por período
 
@@ -73,7 +73,29 @@ plt.plot(senal[0:pb*p])
 
 ```
 
-Como resultado en esta parte, creamos la onda la cual es senoidal en base a la frecuencia que tenemos y tambien la onda modulda para cada bit de entrada asi como se ve en las siguiente imagenes.
+Como resultado en esta parte, creamos la onda la cual es senoidal en base a la frecuencia que tenemos y tambien la onda modulda para cada bit de entrada asi como se ve en las siguiente imagenes. Debido a que se le da un numeero de muestreo por periodo de 50 puntos,la onda cambiara cada 50 dependiendo si es un 0 o un 1 en el bit que se lee. 
 
 <img src="Figure_1.png"> <img src="Figure_2.png">
 
+
+## 2. Calcular la potencia promedio de la señal modulada generada.
+
+Para poder calcular la potencia pormedio primero se ncesita calcular potencia instantanea. Para la potencia promedio la definimos como la señal ya dada al cuadrado, la cual nos da la potencia intsntanea dada en cada particion de la señal dependiendo de los puntos que le demos. Mientras que para la potencia promedio usamos un metodo de integracion trapeziodal, asi con cada valor discreto hacemos la suma uno por uno de todos esos puntos encontrados en la potencia instatanea mediante su area. El codigo siguiente muestra como se hizo.
+
+
+```python
+#Parte 2
+
+Pinst= senal**2
+
+#Potencia Promedio (W)
+
+P=integrate.trapz(Pinst, t)/(len(data)*T)
+
+print('La potencio pormedio es:', P ) 
+```
+Al momento de evaluarlo dando como resultado lo siguiente.
+
+```python
+La potencio pormedio es: 0.4900009800019598 
+```
