@@ -75,4 +75,5 @@ plt.plot(senal[0:pb*p])
 
 Como resultado en esta parte, creamos la onda la cual es senoidal en base a la frecuencia que tenemos y tambien la onda modulda para cada bit de entrada asi como se ve en las siguiente imagenes.
 
+<img src="Figure_1.png"> <img src="Figure_2.png">
 
