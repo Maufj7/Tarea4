@@ -2,44 +2,75 @@
 
 ## 1.Crear un esquema de modulación BPSK para los bits presentados. Esto implica asignar una forma de onda sinusoidal normalizada (amplitud unitaria) para cada bit y luego una concatenación de todas estas formas de onda.
 
-Para esta parte comenzamos importando ciertas librerias que nos permitiran un manejo de datos mas eficiente y realizar todo lo que se pide.
+Para esta parte comenzamos importando ciertas librerias que nos permitiran un manejo de datos mas eficiente y realizar todo lo que se pide. Tenemos una frecuencia de la portadora de 5000 Hz. El codigo usado en la primera parte fue el siguiente. EN el cual creamos el modelo BPSK en base que cuando se presenta un 1 la señal se define como lasel seno posotivo y si es un 0 seria el seno negativo.
+
 ```python
-#Frecuencia de operación
-f = 1000 # Hz
+import pandas as pd
+import matplotlib.pyplot as plt
+import scipy as sc
+from scipy.stats import norm
+import matplotlib.mlab as mlab
+import numpy as np
+from fitter import Fitter
+from scipy.optimize import curve_fit
+from scipy import optimize
+from scipy import stats
+from scipy import signal
+from scipy import integrate
+from mpl_toolkits.mplot3d import Axes3D#grafica en 3D
 
-#Duración del período de cada símbolo (onda)
-T = 1/f # 1 ms
+#Leemos los datos 
+data = pd.read_csv('bits10k.csv', header=None, prefix="data")
 
-#Número de puntos de muestreo por período
-p = 50
+f=5000 #frecuencia
+
+T= 1/f #periodo
+
+#numero de puntos de muestreo por período
+
+p=50
 
 #Puntos de muestreo para cada período
-tp = np.linspace(0, T, p)
 
-#Creación de la forma de onda de la portadora
-sinus = np.sin(2*np.pi * f * tp)
+tp=np.linspace(0, T, p)
 
-#Visualización de la forma de onda de la portadora
-plt.plot(tp, sinus)
-plt.xlabel('Tiempo / s')
-plt.show()
+#Creacion de la forma de onda
+
+sine=np.sin(2*np.pi*f*tp)
+
+#Visualizar onda
+plt.figure()
+plt.plot(tp, sine)
+plt.xlabel('Tiempo /s')
+plt.title('Onda')
 
 #Frecuencia de muestreo
-fs = p/T # 50 kHz
 
-#Creación de la línea temporal para toda la señal Tx
-t = np.linspace(0, N*T, N*p)
+fs=p/T #250000
 
-#Inicializar el vector de la señal modulada Tx
-senal = np.zeros(t.shape)
+#Creacion de la linea temporal para tx
 
-#Creación de la señal modulada OOK
-for k, b in enumerate(bits):
-    senal[k*p:(k+1)*p] = b * sinus
+t=np.linspace(0,len(data)*T,len(data)* p)
 
-#Visualización de los primeros bits modulados
-pb = 5
-plt.figure()
+#Inicializar vector de señal
+
+senal= np.zeros(t.shape)
+
+#Señal modulada BPSK
+
+for k,b in enumerate(data['data0']):
+    
+    if b==1:
+        senal[k*p:(k+1)*p]= sine
+    else:
+        senal[k*p:(k+1)*p]= -sine
+        
+        
+#Visualizacion de los bits ya modulados  
+pb=5
+plt.figure(2)
 plt.plot(senal[0:pb*p])
-plt.show()
+
+
+
 ```
