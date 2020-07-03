@@ -3,7 +3,7 @@
 ## 1.Crear un esquema de modulación BPSK para los bits presentados. Esto implica asignar una forma de onda sinusoidal normalizada (amplitud unitaria) para cada bit y luego una concatenación de todas estas formas de onda.
 
 Para esta parte comenzamos importando ciertas librerias que nos permitiran un manejo de datos mas eficiente y realizar todo lo que se pide.
-'''python
+```python
 #Frecuencia de operación
 f = 1000 # Hz
 
@@ -42,4 +42,4 @@ pb = 5
 plt.figure()
 plt.plot(senal[0:pb*p])
 plt.show()
-...
+```
