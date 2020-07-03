@@ -33,17 +33,15 @@ La potencio promedio es: 0.4900009800019598 W
 
 ## 3. Simular un canal ruidoso del tipo AWGN (ruido aditivo blanco gaussiano) con una relación señal a ruido (SNR) desde -2 hasta 3 dB.
 
-```python
-#Parte 2
+Se sabe que la relacion de ruido para una señal viene dada por <img src="SNR.png">.
+Por  lo tanto se creo un codigo que mediante el SNR dado crere la modulacion a partir de la potencia del ruido creado, el cual se da despejando la formula anterior para Pn.  Se le saca la raiz a este valor y creamos el ruido. Debido a que tenemos 6 valores de SRN obtendremos distintas graficas moduladas para cada una como se mira acnontinuacion. Graficando cada 50 puntos ya que eso fue lo que se decidio como muestreo en el codigo.
+Para SRN=-2
+Para SRN=-1
+Para SRN=0
+Para SRN=1
+Para SRN=2
+Para SRN=3
 
-Pinst= senal**2
-
-#Potencia Promedio (W)
-
-P=integrate.trapz(Pinst, t)/(len(data)*T)
-
-print('La potencio pormedio es:', P,'W' ) 
-```
 
 
 
