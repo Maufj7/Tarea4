@@ -44,6 +44,34 @@ Por  lo tanto se creo un codigo que mediante el SNR dado crere la modulacion a p
 
 <img src="srn2.png"> <img src="srn3.png">
 
+## 4. Graficar la densidad espectral de potencia de la señal con el método de Welch (SciPy), antes y después del canal ruidoso.
+
+Para esta parte se necesita el metodo de Welch, ppor lo que utuilzamos este metodo encontrado en la biblioteca scipy. Este nos ayuda a calcular una estimacion de la densidad espectral de la potencia en segmentos, creando asi un periodograma. Al utilizarla se le dan como argumentos la señal. la frecuencia de muestreo, y la longitud que queremos en cada segmento. Se obtienen 12 diferentes resultados para antes y despues de pasarlo por el ruido. 
+
+Para SRN=-2
+<img src="a-2.png"> <img src="d-2.png"> 
+
+Para SRN=-1
+<img src="a-1.png"> <img src="d-1.png"> 
+
+Para SRN=0
+<img src="a0.png"> <img src="d0.png"> 
+
+Para SRN=1
+<img src="a1.png"> <img src="d1.png"> 
+
+Para SRN=2
+<img src="a1.png"> <img src="d1.png"> 
+
+Para SRN=3
+<img src="a1.png"> <img src="d1.png"> 
+
+
+
+
+
+
+
 
 
 
