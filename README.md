@@ -61,10 +61,10 @@ Para SRN=1
 <img src="a1.png"> <img src="d1.png"> 
 
 Para SRN=2
-<img src="a1.png"> <img src="d1.png"> 
+<img src="a2.png"> <img src="d2.png"> 
 
 Para SRN=3
-<img src="a1.png"> <img src="d1.png"> 
+<img src="a3.png"> <img src="d3.png"> 
 
 
 
