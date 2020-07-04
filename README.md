@@ -72,6 +72,21 @@ Para SNR=3
 
 <img src="a3.png"> <img src="d3.png"> 
 
+## 5. Demodular y decodificar la señal y hacer un conteo de la tasa de error de bits (BER, bit error rate) para cada nivel SNR.
+
+Para poder se definen los parametros de pseudo energia de la onda original. Para asi comparar la pseudo energia de la señal ruidosa encontrada para cada SNR dividida a la mitad para asi tener un porcentaje igualitario para ambos resultados de ser 0 o 1. Para asi saber y asignar a uun nuevo vector de que si se encontro energia asigne el valor a uno y si no a 0 encontrando el producto interno de dos funciones. 
+Para encontrar la cantidad de errores hacemos la resta de bits entre los nuevos encontrados para ver si hay errores dentro de un valor absoluto para saber la cantidad de errores.
+Por lo tanto un ejemplo de los resultados puede ser el siguiente ya que varia a veces debido a la variacion de pseudo energio y la asignacion de 1 y 0. Encontrando los valores desde SRN -2 a 3.
+
+```
+Hay un total de 15.0 errores en 10000 bits para una tasa de error de 0.0015.
+Hay un total de 4.0 errores en 10000 bits para una tasa de error de 0.0004.
+Hay un total de 1.0 errores en 10000 bits para una tasa de error de 0.0001.
+Hay un total de 0.0 errores en 10000 bits para una tasa de error de 0.0.
+Hay un total de 0.0 errores en 10000 bits para una tasa de error de 0.0.
+Hay un total de 0.0 errores en 10000 bits para una tasa de error de 0.0.
+```
+
 
 
 
