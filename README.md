@@ -46,7 +46,7 @@ Por  lo tanto se creo un codigo que mediante el SNR dado crere la modulacion a p
 
 ## 4. Graficar la densidad espectral de potencia de la señal con el método de Welch (SciPy), antes y después del canal ruidoso.
 
-Para esta parte se necesita el metodo de Welch, ppor lo que utuilzamos este metodo encontrado en la biblioteca scipy. Este nos ayuda a calcular una estimacion de la densidad espectral de la potencia en segmentos, creando asi un periodograma. Al utilizarla se le dan como argumentos la señal. la frecuencia de muestreo, y la longitud que queremos en cada segmento. Se obtienen 12 diferentes resultados para antes y despues de pasarlo por el ruido. 
+Para esta parte se necesita el metodo de Welch, ppor lo que utuilzamos este metodo encontrado en la biblioteca scipy. Este nos ayuda a calcular una estimacion de la densidad espectral de la potencia en segmentos, creando asi un periodograma. Al utilizarla se le dan como argumentos la señal. la frecuencia de muestreo, y la longitud que queremos en cada segmento. Se obtienen 12 diferentes resultados para antes y despues de pasarlo por el ruido. Se puede ver que la densidad llega a modificarse un poco en cada SNR.
 
 Para SNR=-2
 
@@ -76,7 +76,7 @@ Para SNR=3
 
 Para poder se definen los parametros de pseudo energia de la onda original. Para asi comparar la pseudo energia de la señal ruidosa encontrada para cada SNR dividida a la mitad para asi tener un porcentaje igualitario para ambos resultados de ser 0 o 1. Para asi saber y asignar a uun nuevo vector de que si se encontro energia asigne el valor a uno y si no a 0 encontrando el producto interno de dos funciones. 
 Para encontrar la cantidad de errores hacemos la resta de bits entre los nuevos encontrados para ver si hay errores dentro de un valor absoluto para saber la cantidad de errores.
-Por lo tanto un ejemplo de los resultados puede ser el siguiente ya que varia a veces debido a la variacion de pseudo energio y la asignacion de 1 y 0. Encontrando los valores desde SRN -2 a 3.
+Por lo tanto un ejemplo de los resultados puede ser el siguiente ya que varia a veces debido a la variacion de pseudo energia y la asignacion de 1 y 0. Encontrando los valores desde SRN -2 a 3 ademas se ve que dan valores aceptables ya que son muy bajos.
 
 ```
 Hay un total de 15.0 errores en 10000 bits para una tasa de error de 0.0015.
@@ -86,6 +86,13 @@ Hay un total de 0.0 errores en 10000 bits para una tasa de error de 0.0.
 Hay un total de 0.0 errores en 10000 bits para una tasa de error de 0.0.
 Hay un total de 0.0 errores en 10000 bits para una tasa de error de 0.0.
 ```
+
+
+## 6. Graficar BER versus SNR.
+
+Aqui podemos ver dependiendo del SNR que la cantidad de errores disminuye mientras mas grande sea debido a que mientras mas grande el SNR menos es el ruido.
+
+<img src="BERVSSRN.png"> 
 
 
 
